@@ -1,4 +1,4 @@
-# sitebuilding-VPS
+# Sitebuilding-VPS
 
 基于[Centos7](https://www.centos.org/), [VPS], 搭建一个服务端为[Nodejs](https://nodejs.org/zh-cn/), 数据库为[MySql](https://www.mysql.com/cn/), 
 服务器为[Nginx](https://nginx.org/en/)的站点
