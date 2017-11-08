@@ -1,9 +1,9 @@
 # Sitebuilding-VPS
 
-基于[Centos7](https://www.centos.org/), [VPS], 搭建一个服务端为[Nodejs](https://nodejs.org/zh-cn/), 数据库为[MySql](https://www.mysql.com/cn/), 
-服务器为[Nginx](https://nginx.org/en/)的站点
+基于[Centos7](https://www.centos.org/)， [VPS]， 搭建一个支持[Nodejs](https://nodejs.org/zh-cn/)，[MySql](https://www.mysql.com/cn/)，服务器为[Nginx](https://nginx.org/en/)的站点用来部署自己的个人项目和最重要的翻墙！翻墙！！翻墙！！！（毕竟外面的世界更精彩😊）
 
->由于自己在业余时间学习了egg（nodejs 框架），并且写了一个前后端分离的项目，继续往后打算将其部署在线上运行，于是乎一条采坑之旅又开始了。。。
+- 由于自己在业余时间学习了egg（nodejs 框架），并且写了一个前后端分离的项目，继续往后打算将其部署在线上运行，于是乎一条采坑之旅又开始了。。。
+- 某大会直接导致一大片VPN服务被封下线，如何科学上网成为重中之重！
 
 ## Feature
 
