@@ -37,3 +37,89 @@
 
 没有登录搬瓦工账号的话，需要先填写一些注册账户的信息，填写完之后，支付方式选择Alipay(支付宝)，然后就跟淘宝购物一样，出现二维码，付款就行。
 购买成功后账号，注意查收邮件，会把账单信息和VPS信息发到你邮箱。至此，VPS购买完成！！！！
+
+### 2. 连接服务器
+购买成功后就可以尝试连接了。
+
+![](./static/5.png)
+
+在终端中ping一下，出现上面的结果表示，服务器已经启动了。一切准备就绪之后就可以尝试ssh连接了。
+
+![](./static/6.png)
+![](./static/7.png)
+
+这个地方有个坑，如果采用第一种方法连接会报错，具体原因没有了解过，然后尝试第二种方法是完全可以连接的，输入密码就能连接服务器了。
+
+![](./static/8.png)
+
+搬瓦工有个比较好的地方就是他有个KiwiVM操作面板，可以通过登录这个面板进行服务器上的一些操作，包括给服务器安装操作系统等，都是一键操作的，（这里是选择了centos7）。还有个非常实用的功能就是一键搭建SSR，SR 服务，直接可以用来翻墙！！非常之方便。
+
+### 3. 搭建环境
+前面说到了，这里是以centos7为操作系统来搭建服务器环境，centos7是通过yum来进行安装包管理。
+
+- 安装node
+
+Alternatively for Node.js 8:
+```
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+```
+
+Then install:
+```
+sudo yum -y install nodejs
+```
+
+![](./static/9.png)
+
+出现node和npm当前版本号，说明node安装成功。
+
+- 安装mySql
+mySql的安装要复杂一点：
+
+* 配置YUM源
+
+下载mysql源安装包
+```
+wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+```
+
+安装mysql源
+```
+yum localinstall mysql57-community-release-el7-8.noarch.rpm
+```
+
+检查mysql源是否安装成功
+```
+yum repolist enabled | grep "mysql.*-community.*"
+```
+![](./static/10.png)
+出现上图情况，表明mySql安装源配置成功
+
+* 安装MySQL服务
+
+```
+yum install mysql-community-server
+```
+
+* 启动MySQL服务
+```
+systemctl start mysqld
+```
+
+* 查看MySQL服务
+```
+systemctl status mysqld
+```
+
+* 停止MySQL服务
+```
+systemctl stop mysqld
+```
+
+* 开机启动
+```
+systemctl enable mysqld
+systemctl daemon-reload
+```
+
+- 安装nginx
