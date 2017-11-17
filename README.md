@@ -77,7 +77,7 @@ sudo yum -y install nodejs
 
 mySql的安装要复杂一点：
 
-* 配置YUM源
+- 配置YUM源
 
 下载mysql源安装包
 ```
@@ -91,33 +91,33 @@ yum localinstall mysql57-community-release-el7-8.noarch.rpm
 
 检查mysql源是否安装成功
 ```
-yum repolist enabled | grep "mysql.*-community.*"
+yum repolist enabled | grep "mysql.--community.-"
 ```
 ![](./static/10.png)
 出现上图情况，表明mySql安装源配置成功
 
-* 安装MySQL服务
+- 安装MySQL服务
 
 ```
 yum install mysql-community-server
 ```
 
-* 启动MySQL服务
+- 启动MySQL服务
 ```
 systemctl start mysqld
 ```
 
-* 查看MySQL服务
+- 查看MySQL服务
 ```
 systemctl status mysqld
 ```
 
-* 停止MySQL服务
+- 停止MySQL服务
 ```
 systemctl stop mysqld
 ```
 
-* 开机启动
+- 开机启动
 ```
 systemctl enable mysqld
 systemctl daemon-reload
