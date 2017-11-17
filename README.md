@@ -57,7 +57,7 @@
 ### 3. 搭建环境
 前面说到了，这里是以centos7为操作系统来搭建服务器环境，centos7是通过yum来进行安装包管理。
 
-- 安装node
+#### 安装node
 
 Alternatively for Node.js 8:
 ```
@@ -73,7 +73,8 @@ sudo yum -y install nodejs
 
 出现node和npm当前版本号，说明node安装成功。
 
-- 安装mySql
+#### 安装mySql
+
 mySql的安装要复杂一点：
 
 * 配置YUM源
@@ -121,5 +122,3 @@ systemctl stop mysqld
 systemctl enable mysqld
 systemctl daemon-reload
 ```
-
-- 安装nginx
