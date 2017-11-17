@@ -75,7 +75,7 @@ sudo yum -y install nodejs
 
 #### 安装mySql
 
-mySql的安装要复杂一点：
+mySql的安装要复杂一点：通过yum安装, 因为yum上面没有mySql包，所以直接yum install mySql是不行的，必须要把mySql的下载源加入到yum中。
 
 
 - 下载mysql源安装包
@@ -121,3 +121,60 @@ systemctl stop mysqld
 systemctl enable mysqld
 systemctl daemon-reload
 ```
+
+#### 安装nginx
+通过yum安装, 过程和安装mySql差不多：
+
+- 添加nginx的下载源
+```
+sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+```
+
+- 安装nginx服务
+```
+sudo yum install -y nginx
+```
+
+- 启动nginx服务
+```
+sudo systemctl start nginx.service
+```
+
+- 查看nginx服务
+```
+sudo systemctl status nginx.service
+```
+![](./static/11.png)
+
+如上图，表示nginx正在运行中，这个时候可以直接在浏览器中访问服务器ip
+
+![](./static/12.png)
+
+出现上图，说明服务器nginx启动成功。
+
+- 停止nginx服务
+```
+sudo systemctl stop nginx.service
+```
+
+- 自动启动nginx
+```
+sudo systemctl enable nginx
+```
+
+- nginx默认站点根路径
+```
+/usr/share/nginx/html
+```
+
+- nginx默认站点配置路径
+```
+/etc/nginx/conf.d/default.conf
+```
+
+- Nginx 主配置如下
+```
+/etc/nginx/nginx.conf
+```
+
+至此，站点需要的基本环境已经搭建完成，接下来就可以进行代码的部署与访问了！！！
