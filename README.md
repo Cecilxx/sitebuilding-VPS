@@ -12,6 +12,7 @@
 - Nodejs
 - Nginx
 - MySql
+- Https配置（待）
 
 ## Objective
 
